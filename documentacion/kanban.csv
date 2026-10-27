@@ -1,0 +1,10 @@
+Nombre,Descripcion,Responsable,Plazo,Prioridad,Evidencia,Estado
+Validar modalidad,Confirmar trabajo individual o por equipo,Jorge,Por definir,Alta,Respuesta del docente,POR HACER
+Consultar usuarios,Registrar necesidades reales sin datos sensibles,Jorge,Por definir,Alta,Notas anonimas,POR HACER
+Revisar GDD,Adaptar narrativa y objetivos a hallazgos,Jorge,Por definir,Alta,documentacion/GDD.md,EN REVISION
+Validar logica,Ejecutar pruebas de reglas,Jorge,Por definir,Alta,pruebas/test_logica.py,EN REVISION
+Revisar interfaz,Ejecutar las cuatro misiones y capturar pantallas,Jorge,Por definir,Alta,Capturas y matriz,POR HACER
+Evaluar con companeros,Observar y registrar comentarios,Jorge,Por definir,Alta,Registro de evaluacion,POR HACER
+Crear tablero digital,Cargar tarjetas y conservar historial,Jorge,Por definir,Alta,Enlace y capturas del tablero,POR HACER
+Preparar video,Grabar inicio decisiones victoria y derrota,Jorge,Por definir,Media,Archivo de video,POR HACER
+Preparar sustentacion,Ensayar explicacion de 5 a 7 minutos,Jorge,Por definir,Media,Guion y diapositivas,POR HACER

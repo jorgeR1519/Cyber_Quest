@@ -1,0 +1,1 @@
+# Sin paquetes externos. Requiere Python 3.10 o posterior con Tkinter.
