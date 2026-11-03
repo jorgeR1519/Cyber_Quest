@@ -10,6 +10,7 @@ import wave
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from interfaz import Aplicacion
 from misiones import MISIONES
+from temas import BASE, TEMAS
 
 
 app = Aplicacion()
@@ -34,6 +35,12 @@ try:
     app.comenzar()
     for nivel, mision in enumerate(MISIONES):
         app.abrir(nivel)
+        assert app.tema == TEMAS[nivel]
+        assert app.contenido.cget("bg") == TEMAS[nivel]["panel"]
+        assert app.scroll.cget("bg") == TEMAS[nivel]["fondo"]
+        assert app.zona.cget("bg") == TEMAS[nivel]["fondo"]
+        assert app.scroll.find_withtag("decoracion")
+        assert app.lienzo_mision.find_withtag("personaje")
         for paso in range(len(mision["escenas"])):
             app.examinar(app.juego.escena_actual()["pista"])
             # Un error en el primer sector permite comprobar la recuperación.
@@ -41,6 +48,7 @@ try:
             procesar()
             app.continuar()
             procesar()
+        assert app.tema == BASE  # El mapa y la pantalla final restauran el tema cálido.
     assert app.juego.victoria
     assert app.juego.energia == 3
     app.inicio()

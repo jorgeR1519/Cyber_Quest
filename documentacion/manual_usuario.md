@@ -1,5 +1,9 @@
 # Manual de usuario
 
+La música relajante se reproduce automáticamente en bucle. Al acertar, perder energía u ocurrir otra acción con sonido, el efecto interrumpe el fondo. Después vuelve la música relajante desde el inicio del bucle. El botón SONIDO permite silenciar o activar todo el audio.
+
+Cada misión cambia su paisaje y colores: 1) cielo con nubes, 2) selva, 3) cielo al atardecer, 4) fortaleza de lava. Son ambientaciones decorativas de la aventura digital; los botones y reglas funcionan de la misma manera. Al regresar al mapa se recupera el tema de ciudad cálida.
+
 1. Abre una terminal en la carpeta del proyecto y ejecuta `py main.py` con Python y Tkinter instalados.
 2. Escribe un nombre de 1 a 24 caracteres y pulsa Comenzar aventura.
 3. Abre el primer sector disponible en el mapa.

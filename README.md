@@ -22,6 +22,8 @@ Las pruebas cubren reglas del juego; la navegación y distribución visual neces
 
 ## Archivos para estudiar
 
+Las misiones usan cuatro ambientaciones pixel art: cielo claro, selva, cielo al atardecer e infierno fantástico. `temas.py` comparte paletas y dibujos entre Tkinter y los SVG de entrega. Se conservan reglas, sonidos y animaciones de respuesta. El mapa mantiene la ciudad cálida.
+
 - `misiones.py`: datos narrativos y consecuencias educativas.
 - `logica_juego.py`: estado, validación, puntuación, progreso y reinicio.
 - `interfaz.py`: pantallas, botones y dibujo de la ciudad.
@@ -29,6 +31,8 @@ Las pruebas cubren reglas del juego; la navegación y distribución visual neces
 - `documentacion/`: diseño, metodología, manual y preparación de la entrega.
 
 ## Reglas
+
+La música de fondo es un arpegio relajante original que se reproduce en bucle desde el inicio, a menor volumen que los efectos. Cuando suena un efecto, el fondo se interrumpe; al terminar, el bucle vuelve desde su inicio. Se usa un único canal para evitar superposición y temporizadores de Tkinter para no bloquear la interfaz. SONIDO: OFF silencia música y efectos; ON vuelve a activar el fondo. Al cerrar se cancela la reproducción y cualquier retorno pendiente. Audio disponible en Windows mediante winsound, sin dependencias adicionales.
 
 La interfaz utiliza fondo crema, tonos cálidos de melocotón y terracota, y texto oscuro. Una ciudad de pixel art incluye un guardián animado, un corazón flotante y nubes en movimiento, dibujados con Canvas. Conserva confeti de píxeles y animaciones de respuesta. Incluye efectos arcade originales para aciertos, daño, recuperación de energía y finales (no son grabaciones ni melodías de Mario). El botón SONIDO permite silenciarlos. La reproducción utiliza `winsound` en Windows; en otros sistemas el juego funciona sin audio. No se requieren paquetes externos. Las animaciones se cancelan al cambiar de pantalla y el contenido permite desplazamiento vertical.
 

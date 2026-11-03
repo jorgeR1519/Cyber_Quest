@@ -6,6 +6,7 @@ from tkinter import messagebox
 from logica_juego import Juego
 from misiones import MISIONES
 from sonidos import Sonidos
+from temas import BASE, TEMAS, paisaje, ambiente
 
 FONDO = "#fff7eb"
 PANEL = "#ffe4c4"
@@ -22,32 +23,52 @@ class Aplicacion(tk.Tk):
         self.minsize(850, 720)
         self.configure(bg=FONDO)
         self.juego = None
-        self.sonidos = Sonidos()
+        self.tema = BASE
+        self.nivel_visual = None
+        self.sonidos = Sonidos(self)
         self.tareas = set()
         self.generacion = 0
         self.efecto_id = 0
         self.protocol("WM_DELETE_WINDOW", self.destroy)
-        barra = tk.Frame(self, bg=PANEL)
+        barra = self.barra = tk.Frame(self, bg=PANEL)
         barra.pack(fill="x")
-        tk.Label(barra, text="✦ CYBERQUEST  ·  Una aventura para cuidar tu mundo digital", bg=PANEL,
-                 fg=ACENTO, font=("Segoe UI", 11, "bold")).pack(side="left", padx=18, pady=10)
+        self.marca = tk.Label(barra, text="✦ CYBERQUEST  ·  Una aventura para cuidar tu mundo digital", bg=PANEL,
+                 fg=ACENTO, font=("Segoe UI", 11, "bold"))
+        self.marca.pack(side="left", padx=18, pady=10)
         self.audio = tk.Button(barra, text="SONIDO: ON", command=self.alternar_sonido,
                                bg=PANEL, fg=ACENTO, relief="flat", font=("Segoe UI", 10))
         self.audio.pack(side="right", padx=16)
         # Contenido desplazable para que los controles no se corten en pantallas pequeñas.
-        zona = tk.Frame(self, bg=FONDO)
+        zona = self.zona = tk.Frame(self, bg=FONDO)
         zona.pack(fill="both", expand=True)
         self.scroll = tk.Canvas(zona, bg=FONDO, highlightthickness=0)
-        desplazamiento = tk.Scrollbar(zona, command=self.scroll.yview)
+        desplazamiento = self.desplazamiento = tk.Scrollbar(zona, command=self.scroll.yview)
         desplazamiento.pack(side="right", fill="y")
         self.scroll.pack(side="left", fill="both", expand=True)
         self.scroll.config(yscrollcommand=desplazamiento.set)
         self.contenido = tk.Frame(self.scroll, bg=FONDO, padx=30, pady=14)
-        ventana = self.scroll.create_window(0, 0, window=self.contenido, anchor="nw")
-        self.contenido.bind("<Configure>", lambda e: self.scroll.config(scrollregion=self.scroll.bbox("all")))
-        self.scroll.bind("<Configure>", lambda e: self.scroll.itemconfigure(ventana, width=e.width))
+        self.ventana = self.scroll.create_window(0, 0, window=self.contenido, anchor="nw")
+        self.contenido.bind("<Configure>", self.redibujar_fondo)
+        self.scroll.bind("<Configure>", self.redibujar_fondo)
         self.bind("<MouseWheel>", lambda e: self.scroll.yview_scroll(int(-e.delta / 120), "units"))
         self.inicio()
+        self.sonidos.iniciar_fondo()
+
+    def redibujar_fondo(self, evento=None):
+        ancho = max(1, self.scroll.winfo_width())
+        margen = 95 if self.nivel_visual is not None and ancho >= 800 else 18
+        ancho_tarjeta = min(880, max(1, ancho-2*margen))
+        if int(float(self.scroll.itemcget(self.ventana, "width") or 0)) != ancho_tarjeta:
+            self.scroll.itemconfigure(self.ventana, width=ancho_tarjeta)
+        self.scroll.coords(self.ventana, (ancho-ancho_tarjeta)/2, 16)
+        alto = max(self.scroll.winfo_height(), self.contenido.winfo_reqheight()+32)
+        self.scroll.config(scrollregion=(0, 0, ancho, alto))
+        self.scroll.delete("decoracion")
+        if self.nivel_visual is not None:
+            for x, y, w, h, color, etiqueta in ambiente(self.nivel_visual, ancho, alto):
+                self.scroll.create_rectangle(x, y, x+w, y+h, fill=color, outline="",
+                                             tags=("decoracion", etiqueta))
+            self.scroll.tag_lower("decoracion")
 
     def despues(self, demora, funcion):
         """Registra animaciones para cancelarlas al cambiar de pantalla."""
@@ -62,10 +83,6 @@ class Aplicacion(tk.Tk):
     def alternar_sonido(self):
         self.sonidos.activo = not self.sonidos.activo
         self.audio.config(text="SONIDO: ON" if self.sonidos.activo else "SONIDO: OFF")
-        if not self.sonidos.activo:
-            from sonidos import winsound
-            if winsound:
-                winsound.PlaySound(None, 0)
 
     def destroy(self):
         for tarea in self.tareas:
@@ -74,10 +91,11 @@ class Aplicacion(tk.Tk):
         self.sonidos.cerrar()
         super().destroy()
 
-    def efecto(self, mensaje, color=ACENTO, sonido=None):
+    def efecto(self, mensaje, color=None, sonido=None):
         """Pulso y confeti de píxeles, sin bloquear los botones."""
         if sonido:
             self.sonidos.tocar(sonido)
+        color = color or self.tema["acento"]
         self.efecto_id += 1
         actual = self.efecto_id
         self.monitor.delete("efecto")
@@ -103,8 +121,8 @@ class Aplicacion(tk.Tk):
         cuadro()
 
     def consola(self):
-        self.monitor = tk.Canvas(self.contenido, height=78, bg=PANEL,
-                                 highlightthickness=1, highlightbackground="#edc59c")
+        self.monitor = tk.Canvas(self.contenido, height=78, bg=self.tema["panel"],
+                                 highlightthickness=1, highlightbackground=self.tema["borde"])
         self.monitor.pack(fill="x", pady=8)
         self.monitor.create_text(15, 16, text="✦ Tu aventura, paso a paso", anchor="w",
                                  fill="#805334", font=("Segoe UI", 10))
@@ -116,31 +134,46 @@ class Aplicacion(tk.Tk):
             self.despues(65, lambda: animar(paso+1))
         animar()
 
-    def texto(self, contenido, tam=13, color=TEXTO):
-        etiqueta = tk.Label(self.contenido, text=contenido, bg=FONDO, fg=color,
+    def texto(self, contenido, tam=13, color=None):
+        etiqueta = tk.Label(self.contenido, text=contenido, bg=self.tema["panel"] if self.nivel_visual is not None else self.tema["fondo"], fg=color or self.tema["texto"],
                             font=("Segoe UI", tam), wraplength=780, justify="left")
-        etiqueta.pack(anchor="w", pady=7)
+        etiqueta.pack(anchor="w", fill="x", pady=7)
+        etiqueta.bind("<Configure>", lambda e: etiqueta.config(wraplength=max(100, e.width-6)))
         return etiqueta
 
     def boton(self, texto, comando, activo=True):
         boton = tk.Button(self.contenido, text=texto, command=comando,
-                          bg=PANEL, fg=TEXTO, activebackground="#f7bc75",
-                          activeforeground=TEXTO, font=("Segoe UI", 12),
+                          bg=self.tema["panel"], fg=self.tema["texto"], activebackground=self.tema["hover"],
+                          activeforeground=self.tema["texto"], font=("Segoe UI", 12),
                           cursor="hand2", disabledforeground="#836e5e",
                           relief="raised", borderwidth=2, padx=16, pady=9, wraplength=760,
                           anchor="w", state="normal" if activo else "disabled")
         boton.pack(fill="x", pady=4)
-        boton.bind("<Enter>", lambda e: boton.config(bg="#ffd29a") if boton["state"] == "normal" else None)
-        boton.bind("<Leave>", lambda e: boton.config(bg=PANEL))
+        boton.bind("<Configure>", lambda e: boton.config(wraplength=max(100, e.width-40)))
+        boton.bind("<Enter>", lambda e: boton.config(bg=self.tema["hover"]) if boton["state"] == "normal" else None)
+        boton.bind("<Leave>", lambda e: boton.config(bg=self.tema["panel"]))
         return boton
 
-    def limpiar(self, titulo):
+    def limpiar(self, titulo, nivel=None):
         self.generacion += 1
         for tarea in self.tareas:
             self.after_cancel(tarea)
         self.tareas.clear()
         for widget in self.contenido.winfo_children():
             widget.destroy()
+        self.tema = BASE if nivel is None else TEMAS[nivel]
+        self.nivel_visual = nivel
+        self.configure(bg=self.tema["fondo"])
+        self.contenido.config(bg=self.tema["panel"] if nivel is not None else self.tema["fondo"],
+                              highlightthickness=2 if nivel is not None else 0,
+                              highlightbackground=self.tema["borde"])
+        self.zona.config(bg=self.tema["fondo"])
+        self.scroll.config(bg=self.tema["fondo"])
+        self.desplazamiento.config(bg=self.tema["panel"], troughcolor=self.tema["fondo"],
+                                  activebackground=self.tema["hover"])
+        self.barra.config(bg=self.tema["panel"])
+        self.marca.config(bg=self.tema["panel"], fg=self.tema["texto"])
+        self.audio.config(bg=self.tema["panel"], fg=self.tema["acento"])
         self.scroll.yview_moveto(0)
         self.texto("CYBERQUEST / DEFENSA DIGITAL", 12, ACENTO)
         self.texto(titulo, 25)
@@ -150,6 +183,37 @@ class Aplicacion(tk.Tk):
             self.vidas = self.texto("ENERGÍA  " + "◆ " * self.juego.energia + "◇ " * (3-self.juego.energia), 16, ACENTO)
         self.consola()
         self.efecto("¡Tu próxima aventura te espera!")
+        self.redibujar_fondo()
+        if nivel is not None:
+            def animar_fondo(paso=0):
+                direccion = 1 if paso % 40 < 20 else -1
+                self.scroll.move("nubes_fondo", direccion*.35, 0)
+                self.scroll.move("lianas_fondo", direccion*.12, 0)
+                self.scroll.itemconfigure("brasas_fondo", fill="#ffc878" if paso % 16 < 8 else "#ed9855")
+                self.despues(100, lambda: animar_fondo(paso+1))
+            animar_fondo()
+
+    def escenario_mision(self, nivel):
+        lienzo = tk.Canvas(self.contenido, height=144, bg=self.tema["cielo"], highlightthickness=0)
+        lienzo.pack(fill="x", pady=8)
+        self.lienzo_mision = lienzo
+        def dibujar(evento=None):
+            lienzo.delete("all")
+            escala = max(1, lienzo.winfo_width()) / 900
+            for x, y, w, h, color, etiqueta in paisaje(nivel):
+                lienzo.create_rectangle(x*escala, y, (x+w)*escala, y+h,
+                                        fill=color, outline="", tags=etiqueta)
+        lienzo.bind("<Configure>", dibujar)
+        dibujar()
+        def animar(paso=0):
+            direccion = -1 if paso % 20 < 10 else 1
+            lienzo.move("personaje", 0, direccion*.5)
+            lienzo.move("nubes", .3 if paso % 160 < 80 else -.3, 0)
+            lienzo.move("lianas", direccion*.25, 0)
+            lienzo.move("brasas", 0, direccion*.6)
+            lienzo.itemconfigure("lava", fill="#ffe0a0" if paso % 16 < 8 else "#ffc16c")
+            self.despues(90, lambda: animar(paso+1))
+        animar()
 
     def pixel_art(self, lienzo, dibujo, x, y, escala=4, etiqueta="personaje"):
         """Sprites propios: cada carácter de la matriz representa un píxel."""
@@ -249,7 +313,9 @@ class Aplicacion(tk.Tk):
     def escena(self):
         mision = MISIONES[self.juego.nivel]
         actual = self.juego.escena_actual()
-        self.limpiar(mision["titulo"])
+        self.limpiar(mision["titulo"], self.juego.nivel)
+        self.texto(self.tema["nombre"], 12, self.tema["acento"])
+        self.escenario_mision(self.juego.nivel)
         self.texto(mision["objetivo"], 12, ACENTO)
         self.texto(f"Sector {self.juego.nivel+1} · Situación {self.juego.paso+1}/{len(mision['escenas'])}", 11)
         self.texto(actual["texto"], 17)

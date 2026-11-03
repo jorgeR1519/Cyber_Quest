@@ -21,6 +21,14 @@ Una ciudad tecnológica necesita activar su escudo digital. El jugador asume el 
 
 ## Mecánicas y consecuencias
 
+### Ambientación visual por misión
+
+El escenario ocupa toda la pantalla: fondo y márgenes decorados, barra superior, paneles, botones y desplazamiento adoptan el tema de cada misión. El contenido se coloca sobre una tarjeta clara central para mantener el contraste. Las nubes, árboles, lianas, torres y lava se distribuyen alrededor del área de lectura; el paisaje superior es un complemento. Los SVG muestran esta composición completa.
+
+Actualización del 3 de noviembre de 2026: el primer nivel tiene islas de nubes en un cielo claro; el segundo, una selva con árboles y lianas; el tercero, un cielo al atardecer; y el cuarto, un infierno fantástico con fortaleza y lava. Los paisajes decoran la narrativa digital sin modificar sus objetivos educativos ni sus reglas.
+
+Se mantiene el guardián pixel art, la tipografía legible y los paneles claros. Cada misión tiene su propia paleta de fondo, paneles y botones. Las nubes, lianas y brasas tienen movimientos suaves, junto con las animaciones existentes de respuesta. El mapa conserva la ciudad cálida. Los dibujos y colores se comparten con los SVG mediante temas.py.
+
 Cada escena presenta un incidente con una evidencia examinable y dos acciones. El orden de los botones cambia para evitar memorizar posiciones. Las decisiones modifican recursos y reciben una explicación ligada al incidente. La ciudad se representa mediante un dibujo propio.
 
 Se comienza con 3 de energía y 0 XP. Acción segura: +100 XP. Acción riesgosa: −50 XP y −1 energía. Los puntos nunca bajan de 0. Una misión completa recupera 1 energía, con máximo 3. No hay tiempo límite.
