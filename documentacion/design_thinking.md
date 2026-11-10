@@ -1,39 +1,13 @@
-# Design Thinking: plan y registro
+# Design Thinking · Migración a aventura 2D
 
-Este documento distingue el diseño preparado de la investigación todavía pendiente. No hay entrevistas ni evaluaciones con usuarios registradas.
-
-| Fase | Actividad | Evidencia y estado |
+| Fase | Actividad y estado real | Evidencia |
 |---|---|---|
-| Empatizar | Consultar a 3–5 compañeros sin pedir datos sensibles | Pendiente: notas anónimas y fecha |
-| Definir | Comparar dificultades y redactar necesidad prioritaria | Hipótesis inicial en análisis; validar tras consultas |
-| Idear | Comparar alternativas y justificar elección | Comparación preliminar debajo; revisar con el equipo |
-| Prototipar | Construir pantallas y cuatro misiones | Código preparado; registrar ejecución y capturas reales |
-| Evaluar | Observar una partida, consultar claridad y ajustar | Pendiente: comentarios, pruebas y registro de mejoras |
+| Empatizar | Consultas a estudiantes sobre hábitos y dificultades: pendientes | Plantilla de participantes en la primera entrega |
+| Definir | Hipótesis de dificultad para reconocer engaños y proteger cuentas; pendiente de contrastar localmente | Análisis del problema |
+| Idear | Se comparó la propuesta inicial de decisiones con la aventura 2D; se adoptó la aventura tras la indicación docente comunicada por el autor | Historial del prototipo anterior y GDD actual |
+| Prototipar | Motor de movimiento, cuatro mapas, personajes, objetos y misiones implementados | Código, SVG y capturas del renderizador |
+| Evaluar | Pruebas automatizadas ejecutadas; balance y evaluación con personas pendientes | Matriz de pruebas y registros reales futuros |
 
-## Guía de consulta
+Preguntas propuestas para empatizar: ¿qué señales te hacen desconfiar de un mensaje?, ¿cómo proteges distintas cuentas?, ¿qué harías ante una alerta desconocida? No pedir contraseñas ni datos privados. Registrar participante anónimo, fecha, respuesta, interpretación y cambio de diseño. No inventar respuestas ni atribuir resultados de automatización a usuarios.
 
-1. ¿Qué señales te hacen desconfiar de un mensaje?
-2. ¿Qué harías si te piden un código de acceso?
-3. ¿Qué dificultades encuentras al proteger varias cuentas?
-4. ¿Qué harías ante una alerta desconocida?
-5. ¿Qué tipo de reto te ayudaría a practicar estas decisiones?
-
-Registrar por participante: código anónimo, fecha, respuesta resumida, dificultad observada e implicación de diseño. Evitar nombres de cuentas, claves o detalles privados.
-
-## Ideación preliminar
-
-| Alternativa | Ventaja | Limitación |
-|---|---|---|
-| Preguntas aisladas | Implementación breve | No cubre la experiencia narrativa solicitada |
-| Exploración con movimiento libre | Mayor sensación espacial | Más complejidad para el alcance inicial |
-| Aventura por sectores con decisiones | Conecta historia, recursos y aprendizaje | Necesita escenarios bien escritos para evitar repetición |
-
-Se propone la tercera opción por su viabilidad con Tkinter y su relación directa entre decisiones y consecuencias. Esta es una decisión de diseño inicial, no el resultado de una consulta realizada.
-
-## Registro para evaluar
-
-| Participante | Tarea | Dificultad observada | Comentario | Cambio propuesto | Verificación posterior |
-|---|---|---|---|---|---|
-| Por registrar | Iniciar y completar una misión | Pendiente | Pendiente | Pendiente | Pendiente |
-
-Comparar qué acciones proponía la persona antes y después de jugar puede aportar indicios de comprensión; una muestra pequeña no permite afirmar impacto general.
+En la evaluación jugable, observar si el participante descubre cómo hablar con Ada, inspeccionar, transportar y entregar. Registrar dónde se pierde, cuánto entiende de los iconos y si distingue peligro, pared y objeto. Probar también el impulso y la visibilidad del diario. Ajustar dificultad después de estas observaciones.

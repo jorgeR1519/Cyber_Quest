@@ -1,0 +1,31 @@
+Verificación del 10 de noviembre de 2026
+
+pygame-ce 2.5.8 (SDL 2.32.10, Python 3.14.8)
+test_escaner_y_entrega_sin_preguntas (test_ayudas.PruebasHerramientas.test_escaner_y_entrega_sin_preguntas) ... ok
+test_mecanismos_rechazan_orden_incompleto (test_ayudas.PruebasHerramientas.test_mecanismos_rechazan_orden_incompleto) ... ok
+test_radio_limitada_y_reinicio (test_ayudas.PruebasHerramientas.test_radio_limitada_y_reinicio) ... ok
+test_fruta_y_limite_de_energia_en_cada_modo (test_dificultad.PruebasDificultad.test_fruta_y_limite_de_energia_en_cada_modo) ... ok
+test_modos_validos_y_valores_iniciales (test_dificultad.PruebasDificultad.test_modos_validos_y_valores_iniciales) ... ok
+test_recuperacion_y_persistencia_entre_distritos (test_dificultad.PruebasDificultad.test_recuperacion_y_persistencia_entre_distritos) ... ok
+test_velocidad_y_advertencia_realmente_varian (test_dificultad.PruebasDificultad.test_velocidad_y_advertencia_realmente_varian) ... ok
+test_busca_ultima_posicion_y_regresa_sin_cruzar_paredes (test_inteligencia.PruebasCentinelas.test_busca_ultima_posicion_y_regresa_sin_cruzar_paredes) ... ok
+test_detecta_avisa_y_persigue_en_dos_ejes (test_inteligencia.PruebasCentinelas.test_detecta_avisa_y_persigue_en_dos_ejes) ... ok
+test_lava_persigue_mas_rapido_y_dialogos_congelan_amenazas (test_inteligencia.PruebasCentinelas.test_lava_persigue_mas_rapido_y_dialogos_congelan_amenazas) ... ok
+test_pared_bloquea_vision_y_refugio_protege (test_inteligencia.PruebasCentinelas.test_pared_bloquea_vision_y_refugio_protege) ... ok
+test_persigue_rodeando_un_obstaculo (test_inteligencia.PruebasCentinelas.test_persigue_rodeando_un_obstaculo) ... ok
+test_paso_a_paso_y_ruta_transitable (test_inteligencia.PruebasGuia.test_paso_a_paso_y_ruta_transitable) ... ok
+test_tutorial_gratuito_no_gasta_radio (test_inteligencia.PruebasGuia.test_tutorial_gratuito_no_gasta_radio) ... ok
+test_cuatro_misiones_mediante_movimiento_e_interaccion (test_logica.PruebasAventura.test_cuatro_misiones_mediante_movimiento_e_interaccion) ... ok
+test_dano_invulnerabilidad_derrota_y_reinicio (test_logica.PruebasAventura.test_dano_invulnerabilidad_derrota_y_reinicio) ... ok
+test_nombre_y_colisiones (test_logica.PruebasAventura.test_nombre_y_colisiones) ... ok
+test_todos_los_objetos_son_alcanzables (test_logica.PruebasAventura.test_todos_los_objetos_son_alcanzables) ... ok
+test_fondo_efecto_reanudacion_y_silencio (test_sonidos.PruebasSonidos.test_fondo_efecto_reanudacion_y_silencio) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.596s
+
+OK
+
+Comprobación gráfica:
+pygame-ce 2.5.8 (SDL 2.32.10, Python 3.14.8)
+OK: menú, cuatro mundos, diálogos, pausa, victoria, derrota, reinicio y cierre.

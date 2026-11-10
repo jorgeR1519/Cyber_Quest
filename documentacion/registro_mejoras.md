@@ -1,28 +1,17 @@
-# Registro de decisiones y mejoras
+# Registro de mejoras
 
-## Música ambiental
+## 6 de noviembre de 2026 · Migración a aventura 2D
 
-Se añadió un arpegio original suave de fondo en bucle, con prioridad para los efectos. Un efecto interrumpe el fondo y programa su retorno al terminar; un nuevo efecto sustituye el temporizador anterior. El silencio y el cierre cancelan el retorno pendiente. Se ejecutaron seis pruebas automatizadas, incluida una de prioridad de audio con backend simulado, y la comprobación de interfaz: todas pasaron. La prueba automatizada no valora la experiencia auditiva; el volumen final depende del dispositivo.
+Tras la observación del docente y la solicitud del autor, se reemplazó el cuestionario por una aventura tradicional vista desde arriba. La interfaz activa utiliza Pygame y ofrece movimiento por teclado, colisiones, patrullas, diálogos, objetos, inventario y cuatro misiones espaciales.
 
-## 3 de noviembre de 2026 · Ambientación por misión
+Se conservaron las cuatro ambientaciones y la música original. Las ayudas de selección fueron sustituidas por escáner gratuito, radio de Ada con tres llamadas e impulso para esquivar. Los objetivos se validan en el mundo y los portales dependen de su finalización. El historial de la versión anterior se conserva en historial/prototipo_cuestionario; no es la aplicación activa.
 
-Se incorporaron cielo claro, selva, cielo al atardecer e infierno fantástico, con paletas de interfaz propias y paisajes pixel art animados. El módulo temas.py comparte los dibujos y colores entre el juego y los mockups. Se generaron SVG de las cuatro misiones y cuatro estados de retroalimentación, además de conservar los nombres generales del primer nivel. Se actualizaron HTML, Word y PDF de entrega. Las cinco pruebas de lógica y la comprobación gráfica automatizada pasaron; esta última verifica el cambio de tema y su restauración al regresar al mapa. Se revisó visualmente una lámina comparativa de los cuatro SVG. No se modificaron las reglas ni se atribuyeron estos cambios a evaluación con usuarios.
+Se verificaron rutas seguras hacia todos los objetos, campaña completa, restricciones de objetos, daño y reinicio. También se comprobaron renderizado y eventos sin ventana. La matriz identifica los límites de estas pruebas. Queda pendiente evaluar con personas la claridad, dificultad y utilidad educativa. No se atribuye aprobación docente a la nueva versión sin mostrársela.
 
-| Cambio preparado | Motivo | Verificación |
-|---|---|---|
-| Cuatro niveles | Cubrir el mínimo técnico más exigente de la guía | Revisar contenido y completar partida |
-| Separar lógica e interfaz | Probar reglas sin ventanas y facilitar explicación | Pruebas unitarias |
-| Bloquear respuestas repetidas | Evitar duplicar puntos por escena | Caso de doble respuesta |
-| Reinicio con restauración | Evitar acumular premios al repetir una misión | Caso de reinicio |
-| Mezclar botones | Evitar que la respuesta se aprenda por su posición | Revisión manual |
-| Sin dependencias externas | Simplificar ejecución en el aula | Iniciar en Python con Tkinter |
+## Tres modos de dificultad
 
-Estas decisiones corresponden a la implementación inicial. No se atribuyen a evaluaciones con usuarios que todavía no se han realizado.
+Se incorporó un selector visible con Fácil, Medio y Difícil, configuración centralizada y modo persistente durante la campaña. Se parametrizaron energía, radio, recuperación, detección, movimiento enemigo, memoria, advertencia, protección y recarga. Pasaron 19 pruebas y la verificación gráfica del selector. La guía y el refugio siguen disponibles en todos los modos.
 
-## Mejoras tras evaluación real
+## 9 de noviembre de 2026 · Persecución y guía durante el juego
 
-Actualización de interfaz solicitada por el autor: tema de terminal hacker, escaneo de ciudad, consola animada, partículas, indicadores de energía y audio arcade original con control de silencio. La navegación cancela las animaciones pendientes y la pantalla admite desplazamiento. Se ejecutaron nuevamente las cinco pruebas lógicas y `pruebas/verificar_interfaz.py`: todas pasaron. Esta última comprobó WAV válidos, respuestas, daño, recuperación, victoria, derrota y cambios repetidos de pantalla sin errores de callbacks. La apariencia y reproducción audible requieren revisión humana; no se atribuyen estos cambios a pruebas con usuarios.
-
-| Fecha | Evidencia o comentario | Cambio aplicado | Resultado comprobado |
-|---|---|---|---|
-| Pendiente | Pendiente | Pendiente | Pendiente |
+Se sustituyó la patrulla exclusivamente horizontal por detección con visión, alerta, persecución, memoria y regreso, con velocidades progresivas y refugio protegido. Se agregaron guía inicial, siguiente paso dinámico, resaltado del destino, ruta parcial y tutorial gratuito T. La radio ahora adapta su consejo al progreso actual. Pasaron 15 pruebas unitarias y la comprobación gráfica; se verificaron también el tutorial y su pausa. La valoración humana de dificultad y comprensión sigue pendiente.

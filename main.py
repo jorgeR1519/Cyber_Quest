@@ -1,6 +1,6 @@
 """Ejecuta este archivo para abrir CyberQuest."""
-from interfaz import Aplicacion
+from aventura import Aplicacion
 
 
 if __name__ == "__main__":
-    Aplicacion().mainloop()
+    Aplicacion().ejecutar()

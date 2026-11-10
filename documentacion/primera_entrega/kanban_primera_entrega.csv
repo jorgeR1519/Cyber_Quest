@@ -1,14 +1,13 @@
-﻿"Nombre","Descripcion","Responsable","Plazo propuesto","Prioridad","Evidencia","Estado"
-"Revisar alcance","Revisar el alcance de la primera entrega individual","Jorge Enrique Rentería Mosquera","2026-11-02","Alta","Guía y lista de entregables","POR HACER"
-"Consultar participantes","Recoger 3 a 5 consultas anonimas voluntarias","Jorge Enrique Rentería Mosquera","2026-11-03","Alta","Registro de empatia","POR HACER"
-"Validar analisis y ODS","Ajustar hipotesis a hallazgos reales","Jorge Enrique Rentería Mosquera","2026-11-04","Alta","Analisis y fuente ONU","EN REVISION"
-"Revisar GDD","Aceptar narrativa niveles reglas y objetivos","Jorge Enrique Rentería Mosquera","2026-11-05","Alta","GDD inicial","EN REVISION"
-"Revisar storyboard","Comprobar recorrido y consecuencias","Jorge Enrique Rentería Mosquera","2026-11-05","Media","Storyboard de ocho vinetas","EN REVISION"
-"Revisar mockups","Verificar menu nivel y retroalimentacion","Jorge Enrique Rentería Mosquera","2026-11-06","Alta","Tres archivos SVG","EN REVISION"
-"Evaluar con companeros","Observar uso de mockups y registrar comentarios","Jorge Enrique Rentería Mosquera","2026-11-06","Alta","Registro de evaluacion","POR HACER"
-"Documentar algoritmos","Revisar decisiones avance y reinicio","Jorge Enrique Rentería Mosquera","2026-11-07","Alta","Diseno algoritmico","EN REVISION"
-"Crear tablero digital","Registrar tarjetas y conservar actividad real","Jorge Enrique Rentería Mosquera","2026-11-02","Alta","Enlace del tablero","POR HACER"
-"Registrar mejoras","Ajustar diseno segun evaluacion real","Jorge Enrique Rentería Mosquera","2026-11-09","Alta","Registro de cambios","POR HACER"
-"Capturar evidencia Kanban","Guardar vista general tarjeta e historial","Jorge Enrique Rentería Mosquera","2026-11-10","Alta","Capturas fechadas","POR HACER"
-"Ensayar sustentacion","Ensayar exposición individual de menos de 10 minutos","Jorge Enrique Rentería Mosquera","2026-11-11","Alta","Guion y ensayo","POR HACER"
-"Cerrar primera entrega","Revisar archivos campos pendientes y legibilidad","Jorge Enrique Rentería Mosquera","2026-11-11","Alta","Paquete revisado","POR HACER"
+﻿Nombre,Estado,Responsable,Fecha,Prioridad,Descripcion,Evidencia,Fase,Observaciones
+Migrar a aventura 2D,TERMINADO,Jorge Enrique Rentería Mosquera,2026-11-06,Alta,"Movimiento, colisiones y ciclo de juego",motor.py; aventura.py,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Crear cuatro mapas,TERMINADO,Jorge Enrique Rentería Mosquera,2026-11-06,Alta,"Objetos, personajes, peligros y portales",mundos.py,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Integrar música y efectos,TERMINADO,Jorge Enrique Rentería Mosquera,2026-11-06,Alta,Conservar fondo relajante y prioridad de efectos,sonidos.py; aventura.py,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Probar campaña y renderizado,TERMINADO,Jorge Enrique Rentería Mosquera,2026-11-06,Alta,"Rutas, objetivos, daño, herramientas y eventos",pruebas/test_logica.py; pruebas/verificar_interfaz.py,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Revisar documentos 2D,EN REVISION,Jorge Enrique Rentería Mosquera,2026-11-10,Alta,Aceptar GDD storyboard SVG y algoritmos vigentes,documentacion/primera_entrega/,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Mostrar prototipo al docente,POR HACER,Jorge Enrique Rentería Mosquera,2026-11-09,Alta,Confirmar que la aventura satisface la indicación,Retroalimentación real del docente,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Recoger evidencia local,POR HACER,Jorge Enrique Rentería Mosquera,2026-11-09,Alta,Realizar consultas voluntarias sin datos sensibles,Registro anónimo de empatía,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Evaluar con jugadores,POR HACER,Jorge Enrique Rentería Mosquera,2026-11-10,Alta,Observar movimiento orientación y comprensión,Registro real de evaluación,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Equilibrar amenazas,LISTA GENERAL DE ACTIVIDADES,Jorge Enrique Rentería Mosquera,2026-11-11,Alta,Ajustar centinelas y energía según observaciones,Comentarios y cambios verificados,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Actualizar Notion,POR HACER,Jorge Enrique Rentería Mosquera,2026-11-10,Alta,Registrar la migración y mantener cinco columnas,Enlace e historial del tablero,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Capturar evidencia Kanban,POR HACER,Jorge Enrique Rentería Mosquera,2026-11-11,Alta,Guardar vista general y tarjeta con propiedades,Capturas fechadas del tablero,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.
+Ensayar exposición individual,POR HACER,Jorge Enrique Rentería Mosquera,2026-11-11,Alta,Mostrar análisis diseño y juego en menos de 10 minutos,Guion y duración del ensayo,Migración a aventura 2D,Registro local; no implica sincronización de Notion. Plazos futuros propuestos.

@@ -1,147 +1,87 @@
-# Alcance y portada de la primera entrega
+# Portada y alcance
 
-**Proyecto:** CyberQuest: Defensa Digital.
+**CyberQuest: Los guardianes del escudo** · Institución Universitaria Antonio José Camacho · Ingeniería de Sistemas · Programación III · Tercer semestre.
 
-**Institución:** Institución Universitaria Antonio José Camacho.
+**Autor:** Jorge Enrique Rentería Mosquera. Modalidad: individual. **Docente:** José Alejandro Martínez Pérez. Grupo: por completar.
 
-**Programa y curso:** Ingeniería de Sistemas, tercer semestre, Programación III.
+**Actualización:** 6 de noviembre de 2026. **Sustentación:** 12 de noviembre, durante clase, máximo 10 minutos, según la imagen de la primera entrega. La imagen no especifica año; la planificación usa el año del curso.
 
-**Docente:** José Alejandro Martínez Pérez, según la guía original.
+## Cambio de propuesta
 
-**Autor principal provisional:** Jorge Enrique Rentería Mosquera. Integrantes adicionales y grupo: por completar. La guía solicita participación del equipo; confirmar modalidad autorizada.
+El docente solicitó una experiencia de juego tradicional con personajes, historia y gráficos 2D o 3D. La versión actual es una aventura 2D de exploración y objetivos espaciales: no hay selección de respuestas. Las instrucciones educativas se incorporan a diálogos, inspecciones y consecuencias de acciones realizadas en el mundo.
 
-**Fecha de preparación:** 30 de octubre de 2026. Sustentación: 12 de noviembre, durante la clase, máximo 10 minutos, según la imagen. Se asume el año del curso, pues la imagen no lo especifica.
+## Productos de esta entrega
 
-Esta entrega presenta el análisis y diseño. El código disponible se utiliza como prototipo de apoyo; no reemplaza las evidencias de investigación ni el tablero Kanban real.
-
-## Correspondencia con los seis productos
-
-| Producto solicitado | Material incluido | Estado |
+| Producto | Evidencia actual | Pendiente |
 |---|---|---|
-| Análisis y ODS | Análisis, público, objetivos y relación con ODS 4 | Borrador; validar problema local |
-| GDD inicial | Narrativa, personajes, niveles, reglas y recursos | Preparado para revisión |
-| Storyboard o bosquejo | Secuencia de ocho escenas con acciones y transiciones | Preparado |
-| Mockups | Menú, nivel y retroalimentación; archivos SVG | Preparados; evaluar con usuarios |
-| Diseño algorítmico | Pseudocódigo, flujo, datos y conceptos usados | Preparado |
-| Evidencia Kanban | CSV de tarjetas y guía de captura | Tablero y evidencia real pendientes |
+| Análisis y ODS | Hipótesis, contexto propuesto y relación principal con ODS 4 | Evidencia local real |
+| GDD | Historia, personajes, cuatro mapas y reglas de aventura | Revisión del docente y evaluación con personas |
+| Storyboard | Secuencia de exploración, interacción y avance | Ajustes tras evaluación |
+| Mockups | Menú, mapas 2D y diálogos en SVG | Evaluación de comprensión |
+| Diseño algorítmico | Movimiento, colisiones, inventario y objetivos | Explicación oral del autor |
+| Kanban | Tablero existente y CSV de migración preparado | Actualizar tablero y capturas fechadas |
 
-# Propuesta de solución y aprendizaje
+# Storyboard de la aventura
 
-## Pregunta de diseño
-
-¿Cómo facilitar que estudiantes del entorno universitario practiquen la identificación de mensajes sospechosos y decisiones de protección digital mediante una aventura breve y comprensible?
-
-## Propuesta de valor
-
-CyberQuest conecta situaciones cotidianas de seguridad digital con una ciudad ficticia que el jugador ayuda a proteger. Examinar señales, elegir acciones y recibir consecuencias sobre energía y progreso ofrece una oportunidad de practicar sin exponer cuentas ni datos reales. A diferencia de una lista aislada de preguntas, cada decisión forma parte de una misión con continuidad narrativa.
-
-## Público y alcance
-
-Público propuesto: estudiantes universitarios y jóvenes usuarios de correo y plataformas digitales. Contexto de validación propuesto: compañeros del curso en la Institución Universitaria Antonio José Camacho; falta confirmar participantes y recoger evidencia. No se requiere conocimiento previo de ciberseguridad.
-
-El juego no solicita claves reales, no abre enlaces de amenazas y no simula ataques contra terceros. Representa incidentes con textos ficticios. La versión local no guarda progreso al cerrar.
-
-## Objetivos de aprendizaje observables
-
-| Objetivo | Actividad | Cómo se observará |
+| Viñeta | Pantalla y acción | Consecuencia |
 |---|---|---|
-| Identificar señales de un mensaje sospechoso | Examinar remitente, dominio y urgencia en el nivel 1 | El participante identifica señales y explica por qué verifica por otro canal |
-| Distinguir protección débil y más segura de cuentas | Clave única y multifactor en el nivel 2 | Selección de medidas y explicación con sus palabras |
-| Elegir una respuesta prudente ante una alerta | Evitar descargas y seguir protocolo en el nivel 3 | Describe cómo reportar sin agravar el incidente |
-| Integrar las medidas aprendidas | Tres situaciones en el nivel 4 | Justifica decisiones de verificación, acceso y reporte |
+| 1 | Menú: escribir nombre y comenzar | Crear personaje y entrar a las islas |
+| 2 | Leer introducción y moverse hasta Ada | Conocer la amenaza y activar la misión |
+| 3 | Recorrer senderos, evitar patrullas y recoger un paquete | Transportar un objeto en la mochila |
+| 4 | Inspeccionar con F | Leer remitente, dominio y señales del mensaje |
+| 5 | Alcanzar correo oficial o cuarentena y entregar con E | Consecuencia sobre progreso y puntos; una entrega insegura causa daño |
+| 6 | Completar tres entregas y usar el portal | Entrar a la selva y recuperar una energía |
+| 7 | Forjar llave, activar segundo factor y después contener estaciones | Resolver objetivos diferentes en nuevos mapas |
+| 8 | Encender balizas, rescatar habitantes y activar el núcleo | Victoria y cierre de la historia |
 
-Los puntos reflejan decisiones de la partida. No demuestran por sí solos que hubo aprendizaje; se requiere observar y consultar a los participantes.
+## Diseño y accesibilidad
 
-## Relación principal con ODS 4
+El mundo usa pixel art y paletas diferentes por distrito. El diario conserva objetivos y controles. Los diálogos pausan amenazas y no existe cuenta atrás. Los sonidos pueden silenciarse. La ventana se adapta manteniendo la proporción del mundo. Las herramientas se usan con teclas y tienen instrucciones visibles.
 
-La meta 4.4 aborda competencias relevantes de jóvenes y adultos; el indicador 4.4.1 se refiere a habilidades TIC. CyberQuest propone practicar decisiones de protección digital, por lo que su alineación educativa se fundamenta en esa orientación. No se afirma que el juego mida el indicador oficial ni que su impacto esté demostrado. Fuente: Naciones Unidas, https://sdgs.un.org/goals/goal4 (consulta: 30 de octubre de 2026).
+## Investigación y Design Thinking
 
-ODS 9 se conserva como vínculo secundario y contextual con innovación tecnológica. Crear un programa académico no demuestra por sí solo avance en sus metas; para esta primera entrega se prioriza ODS 4, que tiene una relación más directa con el aprendizaje propuesto. Fuente: Naciones Unidas, https://sdgs.un.org/goals/goal9 (consulta: 30 de octubre de 2026).
+Empatizar: consultar de forma voluntaria a 3–5 estudiantes, sin datos sensibles; pendiente. Definir: contrastar la hipótesis y priorizar necesidades; pendiente de esas consultas. Idear: se evaluó el alcance de un cuestionario y de una aventura, y se eligió la aventura ante la indicación del docente. Prototipar: cuatro mapas, reglas y gráficos implementados. Evaluar: pruebas automatizadas ejecutadas; evaluación con personas y balance pendientes.
 
-# Storyboard · recorrido de una partida
+| Participante anónimo | Fecha | Tarea o consulta | Hallazgo real | Cambio propuesto |
+|---|---|---|---|---|
+| P01 | Por completar | Explorar primer mapa | Pendiente de actividad | Por decidir |
+| P02 | Por completar | Usar escáner y entregar mensaje | Pendiente de actividad | Por decidir |
+| P03 | Por completar | Explicar el propósito del segundo factor | Pendiente de actividad | Por decidir |
 
-| Viñeta | Qué ve el jugador | Acción y consecuencia | Siguiente pantalla |
+## Relación con ODS
+
+Se prioriza ODS 4, meta 4.4 e indicador de habilidades TIC, como alineación educativa propuesta. No se afirma que el juego mida el indicador ni produzca impacto demostrado. Fuente institucional consultada previamente: https://sdgs.un.org/goals/goal4. ODS 9 queda como relación contextual secundaria, sin atribuir avance medido en sus metas.
+
+## Kanban y evidencia
+
+El tablero CyberQuest existe en Notion: https://app.notion.com/p/190e3d2ac5714a58a4b651dd81806d15. Su existencia y 19 tarjetas se verificaron el 30 de octubre. Este paquete no implica que se haya actualizado el tablero tras la migración 2D. El CSV nuevo sirve para registrar estas tareas, con Jorge como responsable único.
+
+Para la entrega: capturar la vista general, el detalle de una tarjeta con responsable/plazo/prioridad/evidencia y el historial real. Utilizar las cinco columnas de la guía. No inventar actividad histórica ni resultados de usuarios.
+
+## Fuentes, recursos y declaración de IA
+
+Fuentes del encargo: PDF original, imagen de primera entrega y observación del docente comunicada por el estudiante. Se utilizó Codex para programación, pruebas y borradores. Los gráficos y el audio son generados con código propio. Las capturas incluidas se obtuvieron del renderizador en estados iniciales preparados para documentación, sin simular que un usuario haya jugado. El autor debe comprender y declarar la asistencia según las orientaciones del curso.
+
+## Selector de dificultad · 9 de noviembre de 2026
+
+El menú permite elegir Fácil, Medio o Difícil con clic o con Tab antes de comenzar. Medio está seleccionado inicialmente. El modo queda fijo durante la partida, incluidos portales y reintentos; para cambiarlo se comienza otra aventura. Los objetivos, premios, diálogos, escáner gratuito, guía T y refugio protegido están disponibles en los tres modos.
+
+| Parámetro | Fácil | Medio | Difícil |
 |---|---|---|---|
-| 1. Bienvenida | Ciudad cálida en pixel art, guardián, nombre y reglas | Escribe nombre válido y comienza; si está vacío se solicita corregir | Menú de misiones |
-| 2. Elegir sector | Cuatro misiones; solo la primera disponible | Abre el sector 1; las siguientes permanecen bloqueadas | Nivel 1 |
-| 3. Incidente | Ada recibe un aviso de bloqueo urgente | Lee el contexto y solicita examinar evidencia | Mismo nivel con pista visible |
-| 4. Investigar | Remitente, dominio y petición sospechosos | Compara dos acciones posibles; no hay límite de tiempo | Decisión |
-| 5. Consecuencia segura | Mensaje de defensa reforzada, confeti y sonido | +100 XP; energía sin cambios; lee la explicación | Continuar a otra escena |
-| 6. Consecuencia riesgosa | Alerta textual y visual con sonido distinto | −50 XP sin bajar de 0 y −1 energía; si llega a 0 habrá derrota | Continuar o resultado final |
-| 7. Sector completado | Mapa con nueva misión disponible | Recupera 1 energía hasta máximo 3; se conserva el progreso | Siguiente misión |
-| 8. Cierre | Victoria tras cuatro sectores o derrota sin energía | Revisa puntuación y temas a repasar; puede iniciar otra partida | Bienvenida |
+| Energía inicial y máxima | 7 | 5 | 3 |
+| Llamadas de radio por partida | 5 | 3 | 1 |
+| Recuperación al completar distrito | Hasta 2 | Hasta 1 | Ninguna |
+| Multiplicador de velocidad de patrulla y persecución | 0,75 | 1,00 | 1,18 |
+| Multiplicador del alcance de visión | 0,80 | 1,00 | 1,15 |
+| Advertencia antes de perseguir | 0,90 s | 0,55 s | 0,35 s |
+| Memoria tras perder la visión | 1,4 s | 2,2 s | 3,2 s |
+| Protección después del daño | 2,0 s | 1,5 s | 1,0 s |
+| Recarga del impulso | 0,9 s | 1,2 s | 1,6 s |
 
-## Experiencia de usuario y decisiones visuales
+Una fruta siempre recupera una unidad hasta el máximo de ese modo. Las velocidades base de persecución siguen aumentando entre los cuatro distritos (128, 145, 160 y 178 píxeles/segundo), multiplicadas por el modo. Así se distinguen la dificultad elegida de la progresión de la campaña. Los valores históricos de energía 5, radio 3 y recuperación 1 corresponden al modo Medio.
 
-Fondo crema, paneles melocotón, texto oscuro y acentos terracota. La ciudad y el personaje utilizan bloques de pixel art dibujados con código. El estilo cálido fue solicitado por el autor durante el desarrollo; no se atribuye a pruebas con usuarios.
+La configuración está centralizada en dificultad.py. Se verificaron valores iniciales, límites de frutas, persistencia y recuperación entre distritos, reinicio, velocidades y advertencias efectivas. La suite vigente tiene 19 pruebas unitarias aprobadas y comprobación gráfica aprobada; el balance con jugadores reales continúa pendiente.
 
-Las acciones tienen textos explícitos. El orden de las opciones se mezcla para evitar memorizar posiciones. Las consecuencias se explican por escrito y con recursos visuales; los sonidos se pueden silenciar. La ventana permite desplazamiento vertical. Los mockups representan estados del juego, no botones funcionales ni capturas de la aplicación.
+## Actualización jugable del 9 de noviembre de 2026
 
-## Criterios de aceptación de los mockups
-
-La ambientación debe abarcar la ventana completa, con decoración temática en el fondo y ambos laterales, panel central legible y controles del mismo tema. El diseño debe seguir siendo claro al reducir la ventana; los textos se ajustan al ancho disponible. Los SVG por misión representan esta composición completa.
-
-Actualización visual del 3 de noviembre de 2026: se incluyen mockup_mision_1.svg a mockup_mision_4.svg y cuatro SVG de retroalimentación correspondientes. Las ambientaciones son cielo claro, selva, cielo al atardecer e infierno fantástico. Los nombres generales mockup_nivel.svg y mockup_retroalimentacion.svg representan la primera misión. Todos utilizan las mismas paletas y bloques de paisaje que la interfaz; son diseños, no capturas de ejecución.
-
-Menú: identifica las cuatro misiones, su estado, puntos y energía. Nivel: muestra contexto, pista y acciones diferenciadas. Retroalimentación: explica la decisión, refleja recursos y permite continuar. La evaluación de legibilidad y comprensión con compañeros está pendiente.
-
-# Anexos de investigación y evaluación
-
-## Registro de empatía pendiente
-
-Realizar 3–5 consultas breves como alcance propuesto, sin recopilar claves, nombres de cuentas ni detalles sensibles. Preguntar por señales de desconfianza, reacción ante solicitudes de códigos y respuesta ante alertas. La participación debe ser voluntaria.
-
-| Código anónimo | Fecha | Situación consultada | Respuesta o dificultad observada | Necesidad deducida |
-|---|---|---|---|---|
-| P01 | Por completar | Por completar | Por completar tras la actividad | Por completar |
-| P02 | Por completar | Por completar | Por completar tras la actividad | Por completar |
-| P03 | Por completar | Por completar | Por completar tras la actividad | Por completar |
-
-Después de recoger evidencia: agrupar dificultades repetidas, seleccionar las más relevantes y revisar la pregunta de diseño. Separar las respuestas textuales de las interpretaciones del equipo.
-
-## Evaluación de mockups pendiente
-
-Pedir a un compañero que identifique dónde empieza, cómo examina una pista y qué cambia tras una decisión. Registrar si lo entiende sin explicación adicional y qué términos generan confusión.
-
-| Fecha / participante | Tarea | Dificultad observada o comentario | Cambio propuesto | Verificación posterior |
-|---|---|---|---|---|
-| Por completar | Encontrar primera misión | Pendiente de observación | Por decidir | Pendiente |
-| Por completar | Explicar pérdida de energía | Pendiente de observación | Por decidir | Pendiente |
-
-# Gestión Kanban y evidencias
-
-Se prepara un CSV para trasladar tarjetas a un tablero digital. No se ha creado ni consultado un tablero externo durante la preparación de este paquete.
-
-Columnas: LISTA GENERAL DE ACTIVIDADES, POR HACER, EN PROCESO, EN REVISIÓN y TERMINADO. Cada tarjeta debe contener descripción, responsable, plazo, prioridad, evidencia y estado. Las fechas del CSV son una planificación propuesta para llegar al 12 de noviembre; ajustarlas al calendario y al equipo real.
-
-## Evidencia que debe incorporarse
-
-| Evidencia | Contenido requerido | Estado |
-|---|---|---|
-| Enlace del tablero | URL accesible al docente | Por completar |
-| Captura general | Columnas, tarjetas y avance legibles, con fecha | Pendiente |
-| Detalle de una tarjeta | Responsable, fecha, descripción, prioridad y evidencia | Pendiente |
-| Historial o actividad | Movimientos y aportes reales del equipo | Pendiente |
-
-No mover todas las tareas a TERMINADO para simular seguimiento. Registrar el estado real desde la creación del tablero; los documentos preparados deben pasar por revisión antes de aceptarse.
-
-# Sustentación · guion de máximo 10 minutos
-
-| Tiempo | Contenido | Evidencia a mostrar |
-|---|---|---|
-| 0:00–1:15 | Problema, contexto y público | Análisis y hallazgos reales si ya se recogieron |
-| 1:15–2:00 | Objetivos educativos, propuesta y ODS 4 | Objetivos y justificación |
-| 2:00–3:15 | Cinco fases de Design Thinking | Consultas, alternativas y evaluación; señalar lo pendiente |
-| 3:15–4:45 | GDD: historia, cuatro niveles y reglas | Tabla de niveles y recursos |
-| 4:45–6:15 | Storyboard y tres mockups | Secuencia de incidente, decisión y consecuencia |
-| 6:15–7:45 | Solución algorítmica | Pseudocódigo de decidir y continuar; listas y métodos |
-| 7:45–8:45 | Kanban y avance | Enlace, capturas y tarjetas reales |
-| 8:45–9:30 | Conclusiones y próximos pasos | Pendientes y mejoras; reservar 30 segundos de margen |
-
-Asignar bloques a todos los integrantes antes de ensayar. No reemplazar la presentación de análisis y diseño por una demostración extensa del código.
-
-## Declaración de herramientas y fuentes
-
-Se utilizó asistencia de Codex para redactar borradores, organizar documentos y generar código y diseños. El autor y su equipo deben revisar el contenido, comprenderlo y declarar su uso de acuerdo con las orientaciones del profesor. Los sprites y mockups son dibujos generados con código. No se presentan estadísticas ni testimonios inventados.
-
-Fuentes del encargo: PDF de proyecto de aula de Programación III e imagen “Avance proyecto PROGRAMACIÓN”, suministrados por el estudiante. El documento de contexto CyberQuest se utiliza como propuesta de diseño, no como sustituto de la guía del docente.
+Las amenazas detectan y persiguen al guardián con advertencia visual, cobertura y pérdida de rastro. El refugio está protegido. La guía inicial identifica al personaje y los controles; el diario muestra la acción inmediata, un destino resaltado y marcas de ruta. T abre ayuda gratuita y H da orientación contextual. Las capturas y SVG actuales muestran estas ayudas visuales. Falta evaluar con jugadores la dificultad y la comprensión.

@@ -1,22 +1,12 @@
-# Pensamiento computacional
+# Pensamiento computacional · Aventura 2D
 
-| Componente | Aplicación concreta |
+| Componente | Evidencia en el juego |
 |---|---|
-| Descomposición | Separar contenido, reglas, interfaz y pruebas en módulos |
-| Patrones | Todas las escenas comparten incidente, evidencia, acciones y explicación |
-| Abstracción | Representar una amenaza mediante datos ficticios y una decisión, omitiendo redes y ataques reales |
-| Algoritmos | Validar acción, aplicar consecuencia, comprobar energía y desbloquear el siguiente sector |
+| Descomposición | Mundos y datos, reglas, dibujo, audio, pruebas y documentación |
+| Patrones | Los objetos comparten id, tipo y coordenadas; las misiones comparten refugio, objetivo y portal |
+| Abstracción | La seguridad digital se representa con paquetes, llaves, balizas y conexiones; no se realizan ataques reales |
+| Algoritmos | Colisiones por eje, validación de interacciones, secuencias de objetivos, avance y reinicio |
 
-## Conceptos de programación
+Variables: posición, energía, XP, nivel y radio. Listas: objetos y centinelas. Diccionarios: mapas y tipos de objetos. Conjuntos: objetivos terminados e inspecciones. Condicionales: requisitos de mecanismos y finales. Ciclos anidados: casillas del mapa y píxeles del personaje. Funciones/métodos: mover, escanear, interactuar, recibir_dano y cargar_nivel.
 
-- Variables y tipos: nombre (texto), puntos y energía (enteros), pendiente (booleano).
-- Secuencia: validar, actualizar, registrar y mostrar consecuencias.
-- Condicionales: respuesta segura, acceso bloqueado, victoria y derrota.
-- Ciclos: crear botones por misión y recorrer el historial.
-- Ciclos anidados pertinentes: dibujar edificios y sus ventanas en `ciudad`.
-- Listas y diccionarios: misiones, escenas, opciones e historial.
-- Métodos: `decidir`, `continuar` y `reiniciar_mision` encapsulan reglas reutilizables.
-- Validaciones y excepciones: impedir nombres vacíos, índices inválidos y decisiones duplicadas.
-- Eventos gráficos: botones invocan métodos; `mainloop` procesa la interacción.
-
-Para defender el proyecto, sigue una decisión desde el botón en `interfaz.py` hasta `Juego.decidir`, explica la actualización de recursos y termina en `continuar`. Compara después una decisión segura con una riesgosa.
+La prueba de accesibilidad usa una búsqueda en anchura sobre casillas transitables. Es una herramienta de validación de mapas y no una función artificial dentro del producto. Cada estructura responde a un problema concreto del mundo 2D.

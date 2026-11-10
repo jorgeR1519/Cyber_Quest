@@ -1,56 +1,85 @@
-# Game Design Document
+# GDD · CyberQuest: Los guardianes del escudo
 
-## Identidad y propósito
+Versión 2D de aventura · 6 de noviembre de 2026. Autor: Jorge Enrique Rentería Mosquera. Trabajo individual, Programación III.
 
-**CyberQuest: Defensa Digital** es una aventura de decisiones para estudiantes y jóvenes usuarios de internet. Busca practicar el reconocimiento de mensajes fraudulentos, la protección de cuentas y la respuesta básica ante alertas. No mide competencia profesional ni sustituye asesoría técnica.
+## Concepto y propósito
 
-La problemática inicial es la posible dificultad de algunos usuarios para reconocer engaños y proteger su información. Su frecuencia y presencia en el contexto local están pendientes de investigación. La propuesta se relaciona principalmente con ODS 4 mediante el aprendizaje interactivo; la relación secundaria propuesta con ODS 9 se basa en el desarrollo de una herramienta tecnológica educativa.
+Aventura 2D vista desde arriba, con exploración por teclado, objetos, personajes y obstáculos. El jugador protege una ciudad digital completando objetivos dentro de cuatro mapas. El aprendizaje surge de inspeccionar, transportar, activar, contener y rescatar; no se presenta un cuestionario.
 
-## Narrativa y personajes
+Público: estudiantes y jóvenes que usan servicios digitales. Problema inicial: posibles dificultades para reconocer engaños y proteger cuentas; la presencia local de este problema sigue pendiente de validación mediante consultas reales. Relación principal con ODS 4, meta 4.4, como propuesta de práctica de competencias digitales, sin atribuir impacto medido.
 
-Una ciudad tecnológica necesita activar su escudo digital. El jugador asume el rol de guardián y ayuda a Ada, usuaria del centro de comunicaciones, y Leo, responsable de una cuenta de la torre. Un sistema de alertas presenta las situaciones de los sectores.
+## Historia
 
-## Escenarios y niveles
+Sombra ha apagado las defensas que conectan los cuatro distritos. El guardián parte del refugio de Ada, cruza la selva de Leo, auxilia a Iris al atardecer y entra en la fortaleza de lava. Al reunir las defensas y rescatar a los habitantes puede reactivar el escudo de la ciudad.
 
-| Nivel | Escenario | Reto educativo | Escenas |
+## Personajes
+
+| Personaje | Rol jugable |
+|---|---|
+| Guardián | Personaje controlable por el jugador |
+| Ada | Guía inicial y apoyo por radio |
+| Leo | Custodio de las llaves de la selva |
+| Iris | Técnica del distrito de estaciones |
+| Noa, Sol y Teo | Habitantes que deben ser rescatados en la fortaleza |
+| Sombra y centinelas | Amenazas móviles que se evitan con movimiento e impulso |
+
+## Niveles y relación educativa
+
+| Nivel | Mundo y objetivo | Mecánica | Aprendizaje propuesto |
 |---|---|---|---|
-| La alerta sospechosa | Centro de comunicaciones | Verificar un mensaje y reportar phishing | 2 |
-| El acceso protegido | Torre de identidad | Clave única y autenticación multifactor | 2 |
-| La red comprometida | Estación de trabajo | Evitar descargas y seguir el protocolo | 2 |
-| Operación Escudo Digital | Núcleo de la ciudad | Integrar verificación, protección y reporte | 3 |
+| 1. El correo de las nubes | Cielo: entregar tres mensajes | Inspeccionar evidencia, transportar uno por vez, elegir físicamente la terminal | Verificar dominios y aislar mensajes fraudulentos |
+| 2. Las llaves de la selva | Selva: renovar dos defensas | Recoger tres fragmentos, usar forja, buscar sello, activar segundo factor | Clave única y protección adicional se complementan |
+| 3. Estaciones al atardecer | Cielo al atardecer: detener propagación | Desconectar tres estaciones y alcanzar el soporte | Contener y reportar un incidente |
+| 4. El corazón de Sombra | Fortaleza de lava: rescatar y activar núcleo | Gestionar tres cristales, encender balizas, rescatar habitantes, esquivar centinelas | Integrar protección, coordinación y respuesta |
 
-## Mecánicas y consecuencias
+## Controles y experiencia
 
-### Ambientación visual por misión
+WASD o flechas para moverse; E/Enter para interactuar; F para inspeccionar; H para radio; Espacio para impulso; Esc para pausa; R para solicitar reinicio; M para audio durante la aventura. Los diálogos se avanzan con E/Enter y detienen las amenazas mientras se leen. No hay límite de tiempo. La ventana puede redimensionarse manteniendo la proporción del área lógica 1200 × 800.
 
-El escenario ocupa toda la pantalla: fondo y márgenes decorados, barra superior, paneles, botones y desplazamiento adoptan el tema de cada misión. El contenido se coloca sobre una tarjeta clara central para mantener el contraste. Las nubes, árboles, lianas, torres y lava se distribuyen alrededor del área de lectura; el paisaje superior es un complemento. Los SVG muestran esta composición completa.
+Los mapas tienen 26 × 17 casillas de 32 píxeles. Paredes de nubes, árboles o piedra impiden el paso. Los peligros se reconocen por casillas brillantes y los centinelas por su forma y movimiento. Los objetos tienen iconos, el escáner muestra su función y el nombre aparece al acercarse. El diario lateral conserva objetivo, progreso, mochila y controles.
 
-Actualización del 3 de noviembre de 2026: el primer nivel tiene islas de nubes en un cielo claro; el segundo, una selva con árboles y lianas; el tercero, un cielo al atardecer; y el cuarto, un infierno fantástico con fortaleza y lava. Los paisajes decoran la narrativa digital sin modificar sus objetivos educativos ni sus reglas.
+## Reglas y recursos
 
-Se mantiene el guardián pixel art, la tipografía legible y los paneles claros. Cada misión tiene su propia paleta de fondo, paneles y botones. Las nubes, lianas y brasas tienen movimientos suaves, junto con las animaciones existentes de respuesta. El mapa conserva la ciudad cálida. Los dibujos y colores se comparten con los SVG mediante temas.py.
+Energía inicial/máxima 5. Daño: −1 energía y −20 XP con mínimo 0; retorno al refugio sin perder objetos; protección de 1,5 segundos. El impulso dura 0,16 segundos, recarga en 1,2 segundos y protege brevemente sin atravesar paredes. Hay una fruta reparadora por nivel, recupera 1 y no se consume con energía completa.
 
-Cada escena presenta un incidente con una evidencia examinable y dos acciones. El orden de los botones cambia para evitar memorizar posiciones. Las decisiones modifican recursos y reciben una explicación ligada al incidente. La ciudad se representa mediante un dibujo propio.
+Fragmentos, sello y cristales: +25 XP. Objetivos de entrega, forja, segundo factor, estaciones, reporte, balizas y rescates: +100 XP. Completar distrito: +200 XP y +1 energía hasta el máximo. Máximo sin daño: 2475 XP. La recompensa de cada objeto solo se obtiene una vez. El escáner es gratuito y la radio dispone de tres llamadas por partida.
 
-Se comienza con 3 de energía y 0 XP. Acción segura: +100 XP. Acción riesgosa: −50 XP y −1 energía. Los puntos nunca bajan de 0. Una misión completa recupera 1 energía, con máximo 3. No hay tiempo límite.
+El primer distrito exige haber inspeccionado el mensaje antes de entregarlo. Una terminal incorrecta causa daño y conserva el paquete para corregir la acción. La forja requiere tres fragmentos; el segundo factor requiere la forja y el sello. El reporte requiere tres estaciones desconectadas. Cada rescate requiere su baliza activa; cada baliza consume un cristal. El portal final exige las tres balizas y tres rescates.
 
-Para avanzar se resuelven todas las escenas y se pulsa Continuar tras cada explicación. No es obligatorio acertar todo: los errores tienen consecuencias, y se puede completar con energía restante. La misión siguiente se desbloquea al completar la actual. Las completadas no se repiten. Reiniciar la misión revierte todos sus cambios para evitar acumular puntos.
+## Avance y finales
 
-Victoria: cuatro misiones completas con energía positiva. Derrota: energía igual a 0. El final muestra puntos, cantidad de decisiones seguras y temas que conviene repasar. Máximo: 900 XP en nueve decisiones. El porcentaje de aciertos describe la partida; no prueba aprendizaje real.
+Se habla con el personaje del refugio antes de activar objetivos. Los portales se abren solo al terminar la misión. Victoria: activar el núcleo al completar los cuatro distritos. Derrota: energía cero. Reiniciar restaura el estado de entrada al distrito, incluidas las llamadas y los puntos, conservando el avance de distritos anteriores. Empezar otra aventura reinicia todo. No hay guardado persistente.
 
-## Navegación y prototipo de pantallas
+## Estética, sonido y narrativa
 
-Inicio (nombre y reglas) → Centro de mando (cuatro sectores y ayuda) → Misión (objetivo, incidente, evidencia, acciones, explicación) → Centro de mando o resultado final. El final permite volver a jugar o salir. No se guarda progreso al cerrar.
+Pixel art dibujado con formas propias: personaje animado, tiles, objetos flotantes y centinelas con alas. Cada distrito utiliza una paleta completa. La música original relajante se reproduce en bucle; los efectos la interrumpen y el fondo vuelve al terminar. Se puede silenciar. La información importante también se comunica por texto.
 
-```text
-CYBERQUEST                  XP | Energía | Progreso
-Título de la misión
-Objetivo y número de situación
-Incidente narrativo
-[Examinar evidencia]
-[Acción A]
-[Acción B]
-Explicación de la consecuencia
-[Continuar] [Reiniciar esta misión]
-```
+## Navegación
 
-El mínimo técnico de la guía exige cuatro niveles, aunque otra sección mencione tres. Esta versión adopta cuatro.
+Menú y nombre → introducción → exploración → interacción y diálogos → objetivo completo → portal → siguiente distrito → victoria. Daño puede llevar a derrota; pausa permite reiniciar con confirmación. El storyboard y los SVG actuales se encuentran en la carpeta de primera entrega.
+
+## Selector de dificultad · 9 de noviembre de 2026
+
+El menú permite elegir Fácil, Medio o Difícil con clic o con Tab antes de comenzar. Medio está seleccionado inicialmente. El modo queda fijo durante la partida, incluidos portales y reintentos; para cambiarlo se comienza otra aventura. Los objetivos, premios, diálogos, escáner gratuito, guía T y refugio protegido están disponibles en los tres modos.
+
+| Parámetro | Fácil | Medio | Difícil |
+|---|---|---|---|
+| Energía inicial y máxima | 7 | 5 | 3 |
+| Llamadas de radio por partida | 5 | 3 | 1 |
+| Recuperación al completar distrito | Hasta 2 | Hasta 1 | Ninguna |
+| Multiplicador de velocidad de patrulla y persecución | 0,75 | 1,00 | 1,18 |
+| Multiplicador del alcance de visión | 0,80 | 1,00 | 1,15 |
+| Advertencia antes de perseguir | 0,90 s | 0,55 s | 0,35 s |
+| Memoria tras perder la visión | 1,4 s | 2,2 s | 3,2 s |
+| Protección después del daño | 2,0 s | 1,5 s | 1,0 s |
+| Recarga del impulso | 0,9 s | 1,2 s | 1,6 s |
+
+Una fruta siempre recupera una unidad hasta el máximo de ese modo. Las velocidades base de persecución siguen aumentando entre los cuatro distritos (128, 145, 160 y 178 píxeles/segundo), multiplicadas por el modo. Así se distinguen la dificultad elegida de la progresión de la campaña. Los valores históricos de energía 5, radio 3 y recuperación 1 corresponden al modo Medio.
+
+La configuración está centralizada en dificultad.py. Se verificaron valores iniciales, límites de frutas, persistencia y recuperación entre distritos, reinicio, velocidades y advertencias efectivas. La suite vigente tiene 19 pruebas unitarias aprobadas y comprobación gráfica aprobada; el balance con jugadores reales continúa pendiente.
+
+## Ajuste jugable del 9 de noviembre de 2026
+
+Las amenazas emplean patrulla, alerta, persecución y regreso. Ven al jugador en un radio de 150 a 234 píxeles según el distrito, si no hay paredes entre ambos. La alerta visible dura 0,55 segundos. Persiguen en ambos ejes con navegación por casillas, recuerdan la última posición vista durante 2,2 segundos y regresan al origen al perder el rastro. La velocidad de persecución es 128/145/160/178 píxeles por segundo, frente a 165 del guardián. La fortaleza exige aprovechar cobertura e impulso. El refugio de entrada está protegido.
+
+La introducción explica movimiento, diálogos y objetivo. El diario presenta el siguiente paso específico de cada estado, se resalta el destino y se muestran seis próximas casillas de ruta. Esta orientación evita paredes y peligros estáticos, pero no a las amenazas móviles. T abre una guía gratuita y H consume una llamada contextual. La evaluación de claridad y dificultad con personas sigue pendiente.

@@ -2,10 +2,12 @@
 
 | Entrada | Proceso | Salida |
 |---|---|---|
-| Nombre | Quitar espacios externos y validar longitud 1–24 | Partida nueva o aviso |
-| Identificador de misión | Verificar que sea la siguiente pendiente | Escena inicial o rechazo |
-| Examinar evidencia | Consultar pista del incidente | Texto contextual |
-| Acción elegida | Validar índice y estado; sumar/restar; registrar | XP, energía y explicación |
-| Continuar | Comprobar energía y escenas pendientes | Siguiente escena, mapa o victoria |
-| Reiniciar misión | Restaurar estado inicial y recortar historial | Misión sin cambios acumulados |
-| Nueva partida | Crear otro objeto Juego | Recursos y progreso iniciales |
+| Nombre | Validar 1–24 caracteres | Partida o aviso |
+| Teclas de dirección y tiempo de frame | Normalizar, mover y comprobar paredes | Posición válida |
+| E/Enter cerca de un personaje u objeto | Validar distancia, pared y requisitos | Diálogo, inventario, activación o bloqueo explicado |
+| F | Inspeccionar objeto o paquete transportado | Evidencia y registro de inspección |
+| H | Consumir llamada disponible | Orientación contextual |
+| Espacio | Validar recarga | Impulso temporal |
+| Contacto con peligro | Comprobar protección y aplicar daño | Energía, puntos y regreso al refugio |
+| Portal completo | Registrar distrito y recuperar energía | Siguiente mapa o victoria |
+| Reinicio confirmado | Restaurar instantánea de entrada | Distrito inicial sin recompensas acumuladas |

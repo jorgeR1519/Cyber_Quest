@@ -1,18 +1,24 @@
 # Diccionario de datos
 
-| Dato | Tipo | Rango / función |
+| Dato | Tipo | Función y límites |
 |---|---|---|
-| nombre | str | 1–24 caracteres tras strip |
-| puntos | int | 0–900 en una partida con el contenido actual |
-| energia | int | 0–3; cero indica derrota |
-| completadas | list[int] | Índices consecutivos de misiones completadas |
-| nivel | int o None | 0–3 si hay misión activa |
-| paso | int | Índice de la escena activa; vuelve a 0 al completar |
-| pendiente | bool | True después de decidir y antes de continuar |
-| historial | list[dict] | Nivel, paso, resultado seguro y explicación por decisión |
-| _inicio | tuple o None | Puntos, energía y longitud del historial al iniciar misión |
-| MISIONES | list[dict] | Cuatro niveles con título, zona, objetivo y escenas |
-| opciones | list[dict] | Texto, segura (bool), explicación |
-| victoria / derrota | propiedades bool | Calculadas a partir del progreso y energía |
-
-No se almacenan contraseñas reales ni información de cuentas. Todo el estado es temporal.
+| nombre | str | 1–24 caracteres después de quitar espacios exteriores |
+| x, y | float | Posición del personaje en píxeles del mapa |
+| rect | pygame.Rect calculado | Área de colisión de 20 × 24 píxeles |
+| energia | int | 0–5; cero indica derrota |
+| puntos | int | No negativo; máximo sin daño 2475 |
+| nivel | int | 0–3 |
+| completadas | list[int] | Distritos terminados en orden |
+| hechos | set[str] | Identificadores de objetivos u objetos usados en el distrito |
+| inspeccionados | set[str] | Mensajes examinados con el escáner |
+| carga | str o None | Identificador del único mensaje transportado |
+| fragmentos, cristales | int | Recursos recogidos; cristales se consumen en balizas |
+| sello | bool | Recuperación disponible para activar segundo factor |
+| radio | int | 0–3 llamadas en la partida |
+| dialogo | list[str] | Textos pendientes; detienen la simulación |
+| invulnerable, impulso, espera_impulso | float | Segundos restantes de protección y recarga |
+| muros | list[tuple[int,int]] | Casillas no transitables |
+| objetos | list[dict] | id, tipo, x, y, nombre y requisitos |
+| enemigos | list[dict] | Posición, dirección y extremos de patrulla |
+| eventos | list[tuple[str,str]] | Mensaje de consecuencia y efecto sonoro |
+| _inicio | tuple | Puntos, energía y radio al entrar al distrito |

@@ -1,1 +1,1 @@
-# Sin paquetes externos. Requiere Python 3.10 o posterior con Tkinter.
+pygame-ce==2.5.8

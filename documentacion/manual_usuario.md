@@ -1,21 +1,39 @@
-# Manual de usuario
+# Manual de usuario · Aventura 2D
 
-La música relajante se reproduce automáticamente en bucle. Al acertar, perder energía u ocurrir otra acción con sonido, el efecto interrumpe el fondo. Después vuelve la música relajante desde el inicio del bucle. El botón SONIDO permite silenciar o activar todo el audio.
+Instala las dependencias con `py -m pip install -r requirements.txt` y ejecuta `py main.py`. Escribe un nombre y pulsa Enter o Comenzar aventura.
 
-Cada misión cambia su paisaje y colores: 1) cielo con nubes, 2) selva, 3) cielo al atardecer, 4) fortaleza de lava. Son ambientaciones decorativas de la aventura digital; los botones y reglas funcionan de la misma manera. Al regresar al mapa se recupera el tema de ciudad cálida.
+Muévete con WASD o flechas. E/Enter habla con personajes, recoge objetos, activa mecanismos y continúa textos. F inspecciona un objeto cercano o el mensaje transportado. H solicita una de las tres ayudas por radio. Espacio mientras te mueves activa el impulso para esquivar. Esc pausa; R solicita reiniciar el distrito y Enter confirma. M controla el sonido durante la aventura.
 
-1. Abre una terminal en la carpeta del proyecto y ejecuta `py main.py` con Python y Tkinter instalados.
-2. Escribe un nombre de 1 a 24 caracteres y pulsa Comenzar aventura.
-3. Abre el primer sector disponible en el mapa.
-4. Lee el incidente y pulsa Examinar evidencia para ver sus señales.
-5. Elige una acción. Lee su consecuencia y pulsa Continuar.
-6. Completa las situaciones para desbloquear el siguiente sector. Al terminar una misión recuperas una unidad de energía, hasta 3.
-7. Protege los cuatro sectores para ganar. Si la energía llega a 0, la partida termina y puedes volver a jugar.
+Comienza hablando con el personaje del refugio. Revisa el diario de la derecha para ver tus objetivos. En el cielo, inspecciona mensajes y llévalos al correo oficial o a cuarentena. En la selva reúne fragmentos y activa ambas defensas. Al atardecer desconecta estaciones y reporta al soporte. En la fortaleza usa cristales para encender balizas, rescata habitantes y activa el núcleo.
 
-Cada acción segura da 100 XP; cada riesgo resta 50 XP y una energía. Los puntos no bajan de 0. Puedes reiniciar una misión activa para restaurar el estado de su inicio. Después de perder debes iniciar otra partida. Nueva partida solicita confirmación cuando abandona el progreso desde el mapa.
+Tienes cinco unidades de energía. Evita los centinelas y las casillas brillantes. Si recibes daño vuelves al refugio conservando objetos, pero pierdes una energía y hasta 20 XP. Busca frutas reparadoras si te falta energía. Cada portal completado recupera una unidad. Con cero puedes reintentar el distrito o iniciar otra aventura.
 
-El juego funciona sin internet. No introduzcas contraseñas ni datos reales. No guarda progreso: cerrar la ventana termina la sesión.
+Durante diálogos, pausa y resultados las amenazas no avanzan. La música se interrumpe durante los efectos y vuelve después. Cerrar la aplicación pierde la partida: el progreso se conserva solo durante la sesión.
 
-La interfaz tiene colores cálidos y una ciudad de pixel art con un guardián, un corazón y nubes animadas. Los rombos representan la energía disponible. Cada decisión muestra confeti de píxeles; el daño se distingue por una alerta roja y el texto de pérdida de energía. Al completar un sector se anuncia si recuperaste energía o ya estabas al máximo. Los efectos de audio son melodías arcade originales y se reproducen en Windows. Usa SONIDO: ON/OFF en la barra superior para silenciarlos. Puedes desplazar el contenido con la rueda del ratón o la barra lateral.
+## Selector de dificultad · 9 de noviembre de 2026
 
-Si `py` no existe, prueba `python main.py` en una instalación de Python válida. Si falta Tkinter, modifica la instalación de Python para incluir Tcl/Tk. Para comprobarlo ejecuta `py -m tkinter`.
+El menú permite elegir Fácil, Medio o Difícil con clic o con Tab antes de comenzar. Medio está seleccionado inicialmente. El modo queda fijo durante la partida, incluidos portales y reintentos; para cambiarlo se comienza otra aventura. Los objetivos, premios, diálogos, escáner gratuito, guía T y refugio protegido están disponibles en los tres modos.
+
+| Parámetro | Fácil | Medio | Difícil |
+|---|---|---|---|
+| Energía inicial y máxima | 7 | 5 | 3 |
+| Llamadas de radio por partida | 5 | 3 | 1 |
+| Recuperación al completar distrito | Hasta 2 | Hasta 1 | Ninguna |
+| Multiplicador de velocidad de patrulla y persecución | 0,75 | 1,00 | 1,18 |
+| Multiplicador del alcance de visión | 0,80 | 1,00 | 1,15 |
+| Advertencia antes de perseguir | 0,90 s | 0,55 s | 0,35 s |
+| Memoria tras perder la visión | 1,4 s | 2,2 s | 3,2 s |
+| Protección después del daño | 2,0 s | 1,5 s | 1,0 s |
+| Recarga del impulso | 0,9 s | 1,2 s | 1,6 s |
+
+Una fruta siempre recupera una unidad hasta el máximo de ese modo. Las velocidades base de persecución siguen aumentando entre los cuatro distritos (128, 145, 160 y 178 píxeles/segundo), multiplicadas por el modo. Así se distinguen la dificultad elegida de la progresión de la campaña. Los valores históricos de energía 5, radio 3 y recuperación 1 corresponden al modo Medio.
+
+La configuración está centralizada en dificultad.py. Se verificaron valores iniciales, límites de frutas, persistencia y recuperación entre distritos, reinicio, velocidades y advertencias efectivas. La suite vigente tiene 19 pruebas unitarias aprobadas y comprobación gráfica aprobada; el balance con jugadores reales continúa pendiente.
+
+## Cómo saber qué hacer
+
+Tú eres el guardián de sombrero rojo. Pulsa E o Enter para cerrar cada texto; no puedes moverte mientras lees. Habla primero con el personaje del refugio. Revisa SIGUIENTE PASO en el diario y sigue las marcas doradas hasta el objeto resaltado. Las instrucciones cambian al recoger, inspeccionar, entregar o activar un mecanismo. T abre una explicación gratuita cuando la necesites. La radio H también explica tu siguiente acción.
+
+## Cómo escapar de las amenazas
+
+Un ! indica que te detectaron; tras una breve advertencia comenzará la persecución. Rompe la visión rodeando paredes, usa Espacio mientras te mueves para esquivar o vuelve al refugio marcado. Los centinelas recuerdan por poco tiempo dónde te vieron y después regresan a su zona. No entran en el refugio. Los últimos distritos tienen mayor alcance de detección y velocidad. Las marcas doradas guían entre obstáculos fijos: debes seguir esquivando las amenazas móviles.
